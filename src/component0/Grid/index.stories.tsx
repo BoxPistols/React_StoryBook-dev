@@ -10,7 +10,7 @@ import Grid from '../Grid';
 const components0 = storiesOf("Components0", module);
 components0
   .addDecorator(withKnobs)
-  // .addDecorator(withInfo({ inline: true }))
+  .addDecorator(withInfo({ inline: true }))
   .add("Grid", () => (
     <Grid
       text={text("テキスト", "ああああ")}
