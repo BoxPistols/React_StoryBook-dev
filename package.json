@@ -11,6 +11,7 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/storybook__addon-info": "^5.2.1",
+    "cross-env": "^6.0.3",
     "react": "^16.12.0",
     "react-app-polyfill": "^1.0.5",
     "react-dom": "^16.12.0",
@@ -20,9 +21,9 @@
   "scripts": {
     "build:css": "postcss src/styles/main.sass -o src/index.css",
     "watch:css": "postcss src/styles/main.sass -o src/index.css -w",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts start",
+    "build": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts build",
+    "test": "cross-env AUTOPREFIXER_GRID=autoplace react-scripts test",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
@@ -36,14 +37,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all",
-      "ie 10"
+      "not op_mini all"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version",
-      "ie 11"
+      "last 1 ie version",
+      "last 1 edge version"
     ]
   },
   "devDependencies": {
