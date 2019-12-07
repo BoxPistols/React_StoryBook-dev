@@ -37,7 +37,7 @@ const Example = (props: ExampleProps) => {
   const countDown = useCallback(() => countChg(prev => prev - 1), []);
 
   return (
-    <div>
+    <div>'index.tsx'
       <Header>Head</Header>
       {flag && <p>{text}</p>}
       <Button onClick={action}>ボタン</Button>

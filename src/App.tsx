@@ -1,7 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './styles/main.sass';
-import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components'
+
 
 const Header = styled.header`
   font-size: 1.5rem;
@@ -11,9 +12,25 @@ const Header = styled.header`
   // background: #353B41;
 `;
 
+
+const animation = keyframes`
+  0% {
+    opacity: 0;
+  }
+
+  100 {
+    opacity: 1;
+  }
+`
+
+const animationRule = css`
+  ${animation} 1s infinite alternate;
+`
+
 const Component = styled.div`
   background: teal;
   color: red;
+  animation: ${animationRule};
 `
 
 const ExtendedComponent = styled(Component)`
