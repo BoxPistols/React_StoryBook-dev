@@ -14,11 +14,11 @@ const Button = styled.button`
   padding: 1rem 3rem;
   text-align: center;
   color: ghostwhite;
-  background: teal;
+  background: tomato;
   border-radius: 3rem;
 `;
 
-export interface ExampleProps {
+export interface Example0Props {
   /** 表示するテキスト */
   text: string;
   /**
@@ -30,7 +30,7 @@ export interface ExampleProps {
   action(): void;
 }
 
-const Example = (props: ExampleProps) => {
+const Example0 = (props: Example0Props) => {
   const { text, flag, action } = props;
   const [count, countChg] = useState(0);
   const countUp = useCallback(() => countChg(prev => prev + 1), []);
@@ -40,7 +40,7 @@ const Example = (props: ExampleProps) => {
     <div>
       <Header>Head</Header>
       {flag && <p>{text}</p>}
-      <Button onClick={action}>ボタン</Button>
+      <Button onClick={action}>ボタン0</Button>
       <p>count:{count}</p>
       <button onClick={countUp}>+</button>
       <button onClick={countDown}>-</button>
@@ -48,4 +48,4 @@ const Example = (props: ExampleProps) => {
   );
 };
 
-export default Example;
+export default Example0;
