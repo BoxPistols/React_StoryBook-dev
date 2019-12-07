@@ -1,11 +1,32 @@
 import React from 'react';
 import logo from './logo.svg';
 import './styles/main.sass';
+import styled from 'styled-components';
+
+const Header = styled.header`
+  font-size: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+  // color: tomato;
+  // background: #353B41;
+`;
+
+const Component = styled.div`
+  background: teal;
+  color: red;
+`
+
+const ExtendedComponent = styled(Component)`
+  color: black;
+`
 
 const App: React.FC = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <Component>
+          <Header><ExtendedComponent>Head</ExtendedComponent></Header>
+        </Component>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Wel <code>src/App.tsx</code> and save to reload.
