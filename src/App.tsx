@@ -37,28 +37,38 @@ const ExtendedComponent = styled(Component)`
   color: black;
 `
 
-const App: React.FC = () => {
+class LikeButton extends React.Component {
+  render() {
+    return (
+      <span>いいねボタン予定地</span>
+    );
+  }
+}
+
+// ReactDom.render(
+//   <LikeButton />,
+//   document.getElementById("like-button")
+// );
+
+interface Props {
+  title: string
+}
+
+const FunctionalComponent: React.FC<Props> = (props) => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Component>
-          <Header><ExtendedComponent>Head</ExtendedComponent></Header>
-        </Component>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Wel <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {props.title}
     </div>
   );
 }
 
+const App: React.FC = () => {
+  return (
+    <div className="App">
+      <h1>Hello</h1>
+        {FunctionalComponent({title: "HELLO FC"})}
+      <LikeButton />
+    </div>
+  );
+}
 export default App;
