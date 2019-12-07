@@ -10,7 +10,7 @@ import Example from "../Example";
 const components = storiesOf("Components", module);
 components
   .addDecorator(withKnobs)
-  .addDecorator(withInfo({ inline: true }))
+  // .addDecorator(withInfo({ inline: true }))
   .add("Example", () => (
     <Example
       text={text("テキスト", "ああああ")}
