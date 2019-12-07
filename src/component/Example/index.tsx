@@ -1,4 +1,21 @@
 import React, { useState, useCallback } from "react";
+import styled from 'styled-components';
+
+const Header = styled.header`
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  color: #FFC507;
+  background: #353B41;
+`;
+
+const Button = styled.button`
+  font-size: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  color: #FFC507;
+  background: #353B41;
+`;
 
 export interface ExampleProps {
   /** 表示するテキスト */
@@ -20,8 +37,9 @@ const Example = (props: ExampleProps) => {
 
   return (
     <div>
+      <Header>Head</Header>
       {flag && <p>{text}</p>}
-      <button onClick={action}>ボタン</button>
+      <Button onClick={action}>ボタン</Button>
       <p>count:{count}</p>
       <button onClick={countUp}>+</button>
       <button onClick={countDown}>-</button>
