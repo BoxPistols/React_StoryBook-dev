@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './styles/main.sass';
 import styled, { css, keyframes } from 'styled-components'
 
-
 const Header = styled.header`
   font-size: 1.5rem;
   padding: 2rem;
@@ -11,7 +10,6 @@ const Header = styled.header`
   // color: tomato;
   // background: #353B41;
 `;
-
 
 const animation = keyframes`
   0% {
@@ -37,10 +35,36 @@ const ExtendedComponent = styled(Component)`
   color: black;
 `
 
+const EqualDivider = styled.div`
+  display: flex;
+  margin: 0.5rem;
+  padding: 1rem;
+  background: papayawhip;
+  // flex-direction: column;
+  > * {
+    flex: 1;
+    &:not(:first-child) {
+      // margin-top : 1rem;
+      margin-left : 1rem;
+    }
+  }
+`;
+const Child = styled.div`
+  padding: 0.25rem 0.5rem;
+  background: palevioletred;
+`;
+
+
 class LikeButton extends React.Component {
   render() {
     return (
-      <span>いいねボタン予定地</span>
+      <div>
+        <EqualDivider>
+          <Child>First</Child>
+          <Child>Second</Child>
+          <Child>Third</Child>
+        </EqualDivider>
+        </div>
     );
   }
 }
@@ -71,4 +95,5 @@ const App: React.FC = () => {
     </div>
   );
 }
+
 export default App;

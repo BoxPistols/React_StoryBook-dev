@@ -1,5 +1,7 @@
 import React, { useState, useCallback } from "react";
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import styled, { css, keyframes } from 'styled-components'
+
 
 const Header = styled.header`
   font-size: 1.5rem;
@@ -18,13 +20,9 @@ const Button = styled.button`
   border-radius: 3rem;
 `;
 
+
 export interface ExampleProps {
-  /** 表示するテキスト */
   text: string;
-  /**
-   * true: テキスト表示 false: テキスト非表示
-   * @default false
-   */
   flag?: boolean;
   /** ボタンを押した時のイベントハンドラ */
   action(): void;
@@ -37,10 +35,13 @@ const Example = (props: ExampleProps) => {
   const countDown = useCallback(() => countChg(prev => prev - 1), []);
 
   return (
-    <div>'index.tsx'
+    <div>
+
       <Header>Head</Header>
+
       {flag && <p>{text}</p>}
       <Button onClick={action}>ボタン</Button>
+
       <p>count:{count}</p>
       <button onClick={countUp}>+</button>
       <button onClick={countDown}>-</button>
