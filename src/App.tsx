@@ -3,6 +3,32 @@ import logo from './logo.svg';
 import './styles/main.sass';
 import styled, { css, keyframes } from 'styled-components'
 
+
+interface InterfaceMyProps {
+  primary?: boolean;
+  // onClick: () => void;
+}
+
+const StyledButton = styled.button`
+  background: transparent;
+  border-radius: 3px;
+  border: 2px solid palevioletred;
+  color: palevioletred;
+  margin: 0 1em;
+  padding: 0.25em 1em;
+  line-height: 2em;
+  ${(props: InterfaceMyProps) =>
+    props.primary &&
+    css`
+      background: palevioletred;
+      color: white;
+    `};
+`;
+
+const ButtonDev: React.SFC<InterfaceMyProps> = ({ ...props }) => (
+  <StyledButton {...props} />
+);
+
 const Header = styled.header`
   font-size: 1.5rem;
   padding: 2rem;
@@ -59,6 +85,8 @@ class LikeButton extends React.Component {
   render() {
     return (
       <div>
+        <ButtonDev>Normal</ButtonDev>
+        <ButtonDev primary>primary</ButtonDev>
         <EqualDivider>
           <Child>First</Child>
           <Child>Second</Child>
