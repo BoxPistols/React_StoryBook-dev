@@ -5,14 +5,14 @@ import { storiesOf } from "@storybook/react";
 import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 import { action } from "@storybook/addon-actions";
 
-import Example from "../Example";
+import ButtonComp from ".";
 
 const components = storiesOf("Components", module);
 components
   .addDecorator(withKnobs)
   // .addDecorator(withInfo({ inline: true }))
-  .add("Example", () => (
-    <Example
+  .add("ButtonComp", () => (
+    <ButtonComp
       text={text("テキスト", "ああああ")}
       flag={boolean("テキスト表示", true)}
       action={action("ぽちっとな")}

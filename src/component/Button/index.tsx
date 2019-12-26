@@ -21,14 +21,14 @@ const Button = styled.button`
 `;
 
 
-export interface ExampleProps {
+export interface ButtonProps {
   text: string;
   flag?: boolean;
   /** ボタンを押した時のイベントハンドラ */
   action(): void;
 }
 
-const Example = (props: ExampleProps) => {
+const ButtonComp = (props: ButtonProps) => {
   const { text, flag, action } = props;
   const [count, countChg] = useState(0);
   const countUp = useCallback(() => countChg(prev => prev + 1), []);
@@ -49,4 +49,4 @@ const Example = (props: ExampleProps) => {
   );
 };
 
-export default Example;
+export default ButtonComp;
