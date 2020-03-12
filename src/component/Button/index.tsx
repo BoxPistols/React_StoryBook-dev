@@ -24,21 +24,24 @@ const Button = styled.button`
 export interface ButtonProps {
   text: string;
   flag?: boolean;
+  flag2?: boolean;
   /** ボタンを押した時のイベントハンドラ */
   action(): void;
 }
 
 const ButtonComp = (props: ButtonProps) => {
-  const { text, flag, action } = props;
+  const { text, flag2, flag, action } = props;
+ 
   const [count, countChg] = useState(0);
+ 
   const countUp = useCallback(() => countChg(prev => prev + 1), []);
+ 
   const countDown = useCallback(() => countChg(prev => prev - 1), []);
 
   return (
     <div>
 
-      <Header>Head</Header>
-
+      {flag2 && <Header>Head</Header>}
       {flag && <p>{text}</p>}
       <Button onClick={action}>ボタン</Button>
 

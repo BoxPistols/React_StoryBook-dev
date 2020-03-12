@@ -14,6 +14,19 @@ components
   .add("ButtonComp", () => (
     <ButtonComp
       text={text("テキスト", "ああああ")}
+      flag2={boolean("", true)}
+      flag={boolean("テキスト表示", true)}
+      action={action("ぽちっとな")}
+    />
+  ));
+
+  components
+  .addDecorator(withKnobs)
+  // .addDecorator(withInfo({ inline: true }))
+  .add("ButtonComp2", () => (
+    <ButtonComp
+      text={text("テキスト", "ううう")}
+      flag2={boolean("", false)}
       flag={boolean("テキスト表示", true)}
       action={action("ぽちっとな")}
     />
