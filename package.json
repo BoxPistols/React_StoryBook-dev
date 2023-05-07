@@ -58,7 +58,7 @@
     "@storybook/addon-storysource": "^5.2.8",
     "@storybook/addon-viewport": "^5.2.8",
     "@storybook/addons": "^5.2.8",
-    "@storybook/cli": "^5.2.8",
+    "@storybook/cli": "^7.0.9",
     "@storybook/react": "^5.2.8",
     "autoprefixer": "^9.7.3",
     "cssnano": "^4.1.10",
